@@ -1,0 +1,50 @@
+body{
+background-color: black;
+
+}
+
+
+.ftco-navbar-light{
+    background: transparent  !important;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 0;
+}
+
+.ftco-navbar-light .navbar-brands{
+    color: #ffffff;
+}
+
+.ftco-navbar-light .navbar-brands:hover,
+.ftco-navbar-light .navbar-brands:hover:focus {
+    color: #ffffff;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link{
+    font-size: 14px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 1 !important;
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+    color: #ffffff;
+}
+
+.ftco-navbar-light .navbar-nav >   .nav-item.cta > a{
+    background: green;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.ftco-navbar-light .navbar-nav >   .nav-item.active > a {
+color: #c8a97e;
+
+}
