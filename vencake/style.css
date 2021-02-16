@@ -1,9 +1,3 @@
-body{
-background-color: black;
-
-}
-
-
 .ftco-navbar-light{
     background: transparent  !important;
     position: absolute;
@@ -22,6 +16,7 @@ background-color: black;
 .ftco-navbar-light .navbar-brands:hover:focus {
     color: #ffffff;
 }
+
 
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link{
     font-size: 14px;
@@ -47,4 +42,78 @@ background-color: black;
 .ftco-navbar-light .navbar-nav >   .nav-item.active > a {
 color: #c8a97e;
 
+}
+
+/* this below written code will work when our page content goes more than screen size or when it scrolled */
+
+.ftco-navbar-light.scrolled .nav-item.active > a{
+    color: #c8a97e !important;
+}
+.ftco-navbar-light.scrolled .nav-item.cta > a{
+    color: #ffffff i !important;
+    background: #c8a97e;
+    border: none !important;
+    border-radius: 0;
+}
+.ftco-navbar-light.scrolled .nav-item.cta > a span{
+    display: inline-block;
+    color: #ffffff !important;
+}
+
+.ftco-navbar-light.scrolled .nav-item.cta.cta-colored span{
+    border-color: #c8a97e;
+}
+
+
+.ftco-navbar-light.scrolled  .nav-link{
+    padding-top: 0.7rem  !important;
+    padding-bottom: 0.7rem !important;
+    color: #000000 !important;
+}
+
+.ftco-navbar-light.scrolled.awake{
+    margin-top: 0px;
+    transition: 0.3s all ease-out;
+
+}
+
+.ftco-navbar-light.scrolled.sleep{
+    transition: 0.3s all ease-out;
+    
+}
+.ftco-navbar-light.scrolled .navbar-brand{
+    color: #000000 ;
+}
+.navbar-brand{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+/* carousel */
+
+.owl-carousel{
+    position: relative;
+}
+.owl-carousel .owl-item{
+    opacity: 0.4;
+}
+
+.owl-carousel .owl-item.active{
+    opacity: 1;
+}
+
+
+.owl-carousel .owl-nav{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+/* my styles */
+#carousel-cake{
+    max-height: 100vh;
+}
+.carousel-item{
+    max-height: 100vh;
+    
 }
