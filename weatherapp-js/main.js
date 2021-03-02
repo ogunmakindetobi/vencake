@@ -3,17 +3,17 @@ const api = {
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     let long;
     let lat;
 
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(postition =>{
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(postition => {
             long = postition.coords.longitude;
             lat = postition.coords.latitude;
         })
 
-    }else{
+    } else {
         h1.textContent = "Allow your location"
     }
 })
@@ -25,7 +25,7 @@ const searchbox = document.getElementById('search-box-input');
 searchbox.addEventListener('keypress', setQuery);
 
 function setQuery(event) {
-    console.log(event, "event") 
+    console.log(event, "event")
     if (event.key === 'Enter') { // can also use event.keyCode = 13
         getResults(searchbox.value);
     }
@@ -54,25 +54,25 @@ function displayResults(weather) {
 
     let app = document.getElementById('app-container')
     // if weahter is less then 23
-    if (weather.main.temp < 23){
+   
+    if (weather.main.temp < 23) {
         app.classList.add('cold')
-    }else{
+    } else {
         app.classList.add('warm')
         app.classList.remove('cold')
     }
-
 
     let hilow = document.querySelector('.hi-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°C / ${Math.round(weather.main.temp_max)}°C`;
 
     let icon = document.getElementById('icon-container')
     console.log(weather.weather[0], "weather")
-    icon.innerHTML = steIcons(weather.weather[0].icon,weather.weather[0].id)
+    icon.innerHTML = steIcons(weather.weather[0].icon, weather.weather[0].id)
 
 }
 
-function steIcons(icon,iconID){
-    const skycons = new skycons({color: "white"});
+function steIcons(icon, iconID) {
+    const skycons = new skycons({ color: "white" });
     const currentIcon = icon.replace(/-/g, "_").toUpperCase();
     skypcons.play();
     return skycons.set(iconID, skycons[currentIcon]);
@@ -82,6 +82,12 @@ function dateBuilder(d) {
     let months = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"];
 
-    let days = ["sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-        "Friday", "Sunday"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`;
 };
