@@ -1,27 +1,50 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './App.css';
 import Todo from "./Todo";
 
 
-// inital value
-const initalState = ["clean Kitchen", "Wipe Floor", "Code"]
+
+
+function getTodoFromLocalStorage() {
+  let todosString = localStorage.getItem('todos')
+  if (todosString && todosString.length > 0) {
+    return todosString.split(",")
+  } else {
+    return []
+  }
+
+}
+
 function App() {
 
-  const [todos, setTodos] = useState(initalState);
-  const [inputeValue, setInputValue] = useState("")
+  const [todos, setTodos] = useState(getTodoFromLocalStorage());
+  const [inputValue, setInputValue] = useState("");
+
+  function removeTodo(todo) {
+    setTodos(todos.filter((td) => (td !== todo)))
+  }
+
+
+  useEffect(() => {
+    localStorage.setItem('todos', todos)
+  }, [todos])
+
   return (
     <div>
       <h1>  Todo List</h1>
       <div>
-        <input value={inputeValue} onChange={(event) => {
-          setInputValue(event.target.value)
-        }}></input>
-        <button onClick={(e) => {setTodos([...todos, inputeValue])// add todo
-        // clean up the field
-        setInputValue("");
+        <input value={inputValue}
+          onChange={(event) => {
+            setInputValue(event.target.value);
+          }}></input>
+        <button onClick={(e) => {
+          // add todo
+          setTodos([...todos, inputValue])
+          // clean up the field
+          setInputValue("");
         }}>Add Todo</button>
       </div>
-      {todos.map(todo => <Todo todo={todo} />)}
+      {todos.map(todo => <Todo todo={todo} removeTodo={removeTodo} />)}
     </div>
   );
 }

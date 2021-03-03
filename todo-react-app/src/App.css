@@ -3,8 +3,24 @@
   color: white;
   margin: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .todo:hover{
   background-color: #2a9d8f;
+}
+
+.remove{
+  width: 25px;
+  height: 25px;
+  background-color: #f4a261;
+  cursor: pointer;
+  border: none;
+
+}
+
+.remove:hover{
+  background-color: #e76f51;
 }
