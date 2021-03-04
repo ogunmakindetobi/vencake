@@ -1,26 +1,113 @@
-.todo{
-  background-color: #264653;
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.todo {
+  border: 1px solid #26de81;
+  background-color: #26de81;
   color: white;
-  margin: 10px;
-  cursor: pointer;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  padding: 1rem 1rem;
+  width: 100%;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: default;
+  box-shadow: 1px 0 12px rgba(0, 0, 0, 0.13);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
-.todo:hover{
-  background-color: #2a9d8f;
+.todo > p {
+  margin: 0px;
 }
 
-.remove{
-  width: 25px;
-  height: 25px;
-  background-color: #f4a261;
+.remove {
+  width: 30px;
+  height: 30px;
+  background-color: salmon;
   cursor: pointer;
   border: none;
+  border-radius: 6px;
+  color: white;
 
 }
 
-.remove:hover{
-  background-color: #e76f51;
+.remove:hover {
+  background-color: red;
 }
+
+.submit-button {
+  padding: 0.25rem 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #fa8231;
+  color: white;
+  margin-left: 0.5rem;
+  height: 45px;
+  background-color: white;
+  color: #fa8231;
+}
+
+.submit-button:hover {
+  color: white;
+  background-color: #fa8231;
+
+  cursor: pointer;
+}
+
+.add-todo-input {
+  padding: 0.25rem 1rem;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #d1d8e0;
+  height: 45px;
+  flex-grow: 1;
+  box-shadow: 1px 0 12px rgba(0, 0, 0, 0.13);
+  box-sizing: border-box;
+}
+
+#app {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.todos-title {
+  color: gray;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0.25rem 0;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4b6584;
+    background-color: #d1d8e0;
+    margin-bottom: 0.5rem;
+  }
+
+
+  .todo-container{
+      width: 100%;
+  }
