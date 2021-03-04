@@ -7,7 +7,7 @@ import Todo from "./Todo";
 
 function getTodoFromLocalStorage() {
   let todosString = localStorage.getItem('todos')// store in local storage
-  if (todosString.length > 0) {
+  if (todosString && todosString.length > 0) {
     return todosString.split(",")
   } else {
     return []
@@ -30,16 +30,23 @@ function App() {
 
 
   return (
-    <div>
-      <h1>  Todo List</h1>
-      <div>
-        <input value={inputValue}// initiate inputValue,everytime input field change its call onChange function
+    <div id="app">
+      <h1 className="todos-title">  Todo List</h1>
+      <div className="input-row">
+        <input 
+        className="add-todo-input"
+        value={inputValue}// initiate inputValue,everytime input field change its call onChange function
           onChange={(event) => {
             setInputValue(event.target.value);
           }}></input>
-        <button onClick={(e) => {
+        <button 
+        className="submit-button"
+        onClick={(e) => {
           // add todo
-          setTodos([...todos, inputValue])
+          if(inputValue && inputValue.length > 0){
+            setTodos([...todos, inputValue]);
+          }
+          
           // clean up the field
           setInputValue("");
         }}>Add Todo</button>

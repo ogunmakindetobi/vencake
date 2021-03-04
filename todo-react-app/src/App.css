@@ -1,5 +1,6 @@
 body{
   font-family: 'Roboto', sans-serif;
+  background-color: tomato;
 }
 
 .todo {
@@ -87,7 +88,7 @@ body{
 }
 
 .todos-title {
-  color: gray;
+  color:#4C4C4C;
   font-size: 2rem;
   font-weight: 800;
   margin: 0.25rem 0;
